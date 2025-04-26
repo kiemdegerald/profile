@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>GERALD PORTFOLIO</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-space-dynamic.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animated.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    
+<!--
+    
+TemplateMo 562 Space Dynamic
+
+https://templatemo.com/tm-562-space-dynamic
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="1s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <h4>GERALD<span>DEV</span></h4>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#about">About </a></li>
+              <li class="scroll-to-section"><a href="#services">Services</a></li>
+              <li class="scroll-to-section"><a href="#portfolio">Portfolio</a></li>
+              <li class="scroll-to-section"><a href="#blog">Blog</a></li> 
+              <li class="scroll-to-section"><a href="#contact">Message Us</a></li> 
+              <li class="scroll-to-section"><div class="main-red-button"><a href="#contact">Contact Now</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content header-text wow fadeInLeft card-container" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="text-content">
+                  <h3 class="welcome-text wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <span>Bienvenue 😊</span>
+                  </h3>
+                  <div class="name-title">
+                    <h2>Je me nomme <em>GERALD KIEMDE</em></h2>
+                    <h6 class="profession">Développeur Web</h6>
+                  </div>
+                  <p class="description">
+                    Je suis un développeur <span class="highlight">web 🌐</span> passionné par la création de sites web innovants et intuitifs. Mon expertise s'étend de la conception à la mise en œuvre, en passant par l'optimisation des performances. Je suis constamment à la recherche de nouvelles façons d'améliorer l'expérience utilisateur. Mon approche créative et ma passion pour la résolution de problèmes me permettent de transformer les idées en solutions numériques efficaces. J'adore collaborer avec des clients pour comprendre leurs besoins et leur offrir des solutions sur mesure.
+                  </p>
+                   <!-- <form id="search" action="#" method="GET" class="contact-form">
+                     <fieldset>
+                      <input type="address" name="address" class="email" placeholder="Entrez l'URL de votre site web" autocomplete="on" required>
+                    </fieldset>
+                    <fieldset>
+                      <button type="submit" class="main-button">Analyser le site</button>
+                    </fieldset> 
+                  </form>  -->
+
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="{% static 'assets/images/GERALD.jpg' %}" alt="Gerald Kiemde">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div id="about" class="tech-stack-section">
+    <div class="container">
+        <h2 class="section-title wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+            Mes Technologies Préférées
+        </h2>
+        <div class="row justify-content-center">
+            <!-- Django Card -->
+            <div class="col-lg-4 col-md-6">
+                <div class="tech-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+                    <div class="tech-icon">
+                        <div class="icon-circle django">
+                            <img src="{% static 'assets/images/django.jpg' %}" alt="Django">
+                        </div>
+                    </div>
+                    <h3>Django</h3>
+                    <p>Framework Python puissant que j'utilise pour développer des applications web robustes et sécurisées. Grâce à son architecture MVT et son admin intégré, je peux créer rapidement des applications complexes tout en maintenant un code propre et organisé.</p>
+                </div>
+            </div>
+
+            <!-- Canva Card -->
+            <div class="col-lg-4 col-md-6">
+                <div class="tech-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+                    <div class="tech-icon">
+                        <div class="icon-circle canva">
+                            <img src="{% static 'assets/images/canva.jpg' %}" alt="Canva">
+                        </div>
+                    </div>
+                    <h3>Canva</h3>
+                    <p>Outil de design intuitif que j'utilise pour créer des maquettes, des visuels attrayants et des assets graphiques pour mes projets web. Il me permet de donner vie aux interfaces utilisateur avec des designs modernes et professionnels.</p>
+                </div>
+            </div>
+
+            <!-- Docker Card -->
+            <div class="col-lg-4 col-md-6">
+                <div class="tech-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.8s">
+                    <div class="tech-icon">
+                        <div class="icon-circle docker">
+                            <img src="{% static 'assets/images/docker.jpg' %}" alt="Docker">
+                        </div>
+                    </div>
+                    <h3>Docker</h3>
+                    <p>Technologie de conteneurisation que j'utilise pour déployer mes applications de manière cohérente et isolée. Docker me permet d'assurer que mes applications fonctionnent de manière identique dans tous les environnements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+
+</style>
+
+
+
+
+<script>
+// Smooth scroll implementation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop - 100, // Ajustement pour le header fixe
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+</script>
+
+<div id="services" class="our-services section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 align-self-center wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
+        <div class="left-image">
+          <img src="{% static 'assets/images/4.png' %}" alt="Processus de développement">
+        </div>
+      </div>
+      <div class="col-lg-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
+        <div class="section-heading">
+          <h2>Notre Processus de <em>Développement</em> &amp; <span>Méthodologie</span></h2>
+          <p>Notre approche méthodique garantit des résultats optimaux pour chaque projet. Nous suivons un processus rigoureux qui combine expertise technique et gestion de projet agile.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="service-item">
+              <i class="fas fa-search"></i>
+              <h4>Analyse</h4>
+              <p>Étude approfondie de vos besoins et objectifs business</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="service-item">
+              <i class="fas fa-pencil-ruler"></i>
+              <h4>Design</h4>
+              <p>Conception d'interfaces intuitives et attractives</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="service-item">
+              <i class="fas fa-code"></i>
+              <h4>Développement</h4>
+              <p>Programmation avec les dernières technologies</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="service-item">
+              <i class="fas fa-bug"></i>
+              <h4>Tests</h4>
+              <p>Vérification rigoureuse de la qualité</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="service-item">
+              <i class="fas fa-rocket"></i>
+              <h4>Déploiement</h4>
+              <p>Mise en production sécurisée de votre projet</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="service-item">
+              <i class="fas fa-cogs"></i>
+              <h4>Maintenance</h4>
+              <p>Support continu et évolutions régulières</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="portfolio" class="our-portfolio section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <h2>Nos <em>Projets</em> &amp; <span>Réalisations</span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+        <div class="portfolio-item">
+          <div class="thumb">
+            <img src="{% static 'assets/images/4.png' %}" alt="E-commerce">
+            <div class="hover-content">
+              <div class="inner-content">
+                <div class="icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+                <a href="#" class="main-button">Voir le Projet</a>
+              </div>
+            </div>
+          </div>
+          <div class="down-content">
+            <h4>E-commerce Premium</h4>
+            <span>Solution Complète de Vente en Ligne</span>
+            <div class="tech-stack">
+              <span class="tech">React</span>
+              <span class="tech">Node.js</span>
+              <span class="tech">MongoDB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="portfolio-item">
+          <div class="thumb">
+            <img src="{% static 'assets/images/4.png' %}" alt="Sécurité Routière">
+            <div class="hover-content">
+              <div class="inner-content">
+                <div class="icon">
+                  <i class="fas fa-car-crash"></i>
+                </div>
+                <a href="#" class="main-button">Voir le Projet</a>
+              </div>
+            </div>
+          </div>
+          <div class="down-content">
+            <h4>Sécurité Routière</h4>
+            <span>Application de Prévention</span>
+            <div class="tech-stack">
+              <span class="tech">Flutter</span>
+              <span class="tech">Firebase</span>
+              <span class="tech">Maps API</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.7s">
+        <div class="portfolio-item">
+          <div class="thumb">
+            <img src="{% static 'assets/images/4.png' %}" alt="Gestion RDV">
+            <div class="hover-content">
+              <div class="inner-content">
+                <div class="icon">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <a href="#" class="main-button">Voir le Projet</a>
+              </div>
+            </div>
+          </div>
+          <div class="down-content">
+            <h4>Système de Rendez-vous</h4>
+            <span>Plateforme de Réservation</span>
+            <div class="tech-stack">
+              <span class="tech">Vue.js</span>
+              <span class="tech">Laravel</span>
+              <span class="tech">MySQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+</style>
+
+<style>
+  .contact-us {
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+  }
+  .section-heading h2 {
+      font-size: 30px;
+      font-weight: 700;
+      color: #2a2a2a;
+      margin-bottom: 25px;
+  }
+  .section-heading p {
+      color: #666;
+      line-height: 1.7;
+  }
+  .phone-info {
+      margin-top: 40px;
+  }
+  .phone-info h4 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #2a2a2a;
+  }
+  .phone-info span {
+      color: #0d6efd;
+      margin-left: 10px;
+  }
+  .phone-info a {
+      color: #0d6efd;
+      text-decoration: none;
+  }
+  form {
+      background-color: #fff;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      position: relative;
+  }
+  form input, 
+  form textarea {
+      width: 100%;
+      height: 44px;
+      border-radius: 5px;
+      background-color: #f7f7f7;
+      border: 1px solid #ddd;
+      padding: 0 15px;
+      font-size: 14px;
+      margin-bottom: 15px;
+  }
+  form textarea {
+      height: 120px;
+      padding: 15px;
+      resize: none;
+  }
+  form button {
+      background-color: #0d6efd;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      transition: all 0.3s;
+      cursor: pointer;
+  }
+  form button:hover {
+      background-color: #0b5ed7;
+      transform: translateY(-2px);
+  }
+  .contact-dec {
+      position: absolute;
+      right: -80px;
+      bottom: -80px;
+      opacity: 0.15;
+  }
+  .contact-dec img {
+      max-width: 300px;
+  }
+  @media (max-width: 991px) {
+      .section-heading {
+          text-align: center;
+          margin-bottom: 45px;
+      }
+      .phone-info {
+          text-align: center;
+      }
+  }
+</style>
+</head>
+<body>
+
+<div id="contact" class="contact-us section">
+<div  class="container ">
+  <div class="row okk">
+      <div class="col-lg-6 align-self-center wow fadeInLeft " data-wow-duration="0.5s" data-wow-delay="0.25s">
+          <div class="section-heading">
+              <h2>Contactez-moi pour toutes vos questions</h2>
+              <p>je suis à votre disposition pour vous accompagner dans tous vos projets et répondre à vos questions.</p>
+              <div class="phone-info">
+                  <h4>mon contact : <span><i class="fa fa-phone"></i> <a href="tel:#">+226 64 34 90 45</a></span></h4>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-6 wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.25s">
+          <form id="contact-form" action="{% url 'contact' %}" method="post">
+              {% csrf_token %}
+              {{ form.non_field_errors }}
+              <div class="row">
+                  <div class="col-lg-12">
+                      <fieldset>
+                          {{ form.name.errors }}
+                          <input type="text" name="name" id="{{ form.name.id_for_label }}" placeholder="Votre nom" required>
+                      </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                      <fieldset>
+                          {{ form.email.errors }}
+                          <input type="email" name="email" id="{{ form.email.id_for_label }}" placeholder="Votre email" required>
+                      </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                      <fieldset>
+                          {{ form.subject.errors }}
+                          <input type="text" name="subject" id="{{ form.subject.id_for_label }}" placeholder="Sujet" required>
+                      </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                      <fieldset>
+                          {{ form.message.errors }}
+                          <textarea name="message" id="{{ form.message.id_for_label }}" placeholder="Votre message" required></textarea>
+                      </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                      <fieldset>
+                          <button type="submit" class="main-button">Envoyer le message</button>
+                      </fieldset>
+                  </div>
+              </div>
+              <div class="contact-dec">
+                  <!-- <img src="static/assets/images/GERALD.jpg" alt="Gerald Kiemde"> -->
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+</div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
+          <p>© Copyright 2021 Space Dynamic Co. All Rights Reserved. 
+          
+          <br>Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'assets/js/animation.js' %}"></script>
+  <script src="{% static 'assets/js/imagesloaded.js' %}"></script>
+  <script src="{% static 'assets/js/templatemo-custom.js' %}"></script>
+ 
+
+</body>
+</html>
