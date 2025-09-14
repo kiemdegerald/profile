@@ -1,116 +1,128 @@
 .main-banner {
-    padding: 120px 0;
+    padding: 150px 0 100px 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
-.card-container {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    padding: 40px;
-    height: 100%;
-    transition: transform 0.3s ease;
+.left-content {
+    margin-right: 45px;
 }
 
-.card-container:hover {
-    transform: translateY(-5px);
-}
-
-.welcome-text {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #4361ee;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.name-title {
-    margin-bottom: 25px;
-}
-
-.name-title h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2b2d42;
-    margin-bottom: 10px;
-}
-
-.name-title em {
-    color: #4361ee;
-    font-style: normal;
-    background: linear-gradient(120deg, #4361ee 0%, #3f37c9 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.name-title h6.profession {
-    font-size: 1.2rem;
-    color: #4361ee;
+.left-content h6 {
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 5px;
-}
-
-.description {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555b6e;
-    margin-bottom: 30px;
-}
-
-.highlight {
+    font-size: 15px;
     color: #4361ee;
-    font-weight: 600;
-}
-
-.contact-form input.email {
-    width: 100%;
-    padding: 15px 20px;
-    border: 2px solid #e9ecef;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    font-weight: 700;
     margin-bottom: 15px;
 }
 
-.contact-form input.email:focus {
-    border-color: #4361ee;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+.left-content h4 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #2b2d42;
+    line-height: 70px;
+    margin-bottom: 40px;
 }
 
-.main-button {
-    background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 10px;
+.left-content h4 em {
+    font-style: normal;
+    color: #4361ee;
+}
+
+.left-content p.description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555b6e;
+    margin-bottom: 30px;
+    max-width: 95%;
+}
+
+.left-content p.description .highlight {
+    color: #4361ee;
     font-weight: 600;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    width: 100%;
 }
 
-.main-button:hover {
+.left-content .main-button-red {
+    margin-bottom: 15px;
+}
+
+.main-button-red a {
+    background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 12px 25px;
+    display: inline-block;
+    border-radius: 23px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.main-button-red a:hover {
+    background: linear-gradient(135deg, #3f37c9 0%, #4361ee 100%);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+.border-first-button a {
+    border: 2px solid #4361ee;
+    color: #4361ee;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 23px;
+    display: inline-block;
+    border-radius: 23px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.border-first-button a:hover {
+    background-color: #4361ee;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 .right-image {
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    position: relative;
 }
 
 .right-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
-    transition: transform 1s ease;
+    transition: transform 0.5s ease;
 }
 
 .right-image:hover img {
-    transform: scale(1.10);
+    transform: scale(1.05);
+}
+
+@media (max-width: 991px) {
+    .main-banner {
+        padding: 120px 0 80px 0;
+    }
+    
+    .left-content {
+        margin-right: 0;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    
+    .left-content h4 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-content h4 {
+        font-size: 30px;
+        line-height: 40px;
+    }
 }
 
 
@@ -148,6 +160,10 @@
     border-radius: 20px;
     padding: 40px 30px;
     text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     height: 100%;
@@ -248,6 +264,29 @@
     background: linear-gradient(135deg, #2496ed 0%, #1d7ac7 100%);
 }
 
+.flutter {
+    background: linear-gradient(135deg, #02569B 0%, #014A8E 100%);
+}
+
+/* Styles spéciaux pour le logo Flutter */
+.flutter-logo svg {
+    transition: transform 0.3s ease;
+}
+
+.tech-card:hover .flutter-logo svg {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.flutter .flutter-logo {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.react {
+    background: linear-gradient(135deg, #61DAFB 0%, #4FA8CC 100%);
+}
+
 /* Smooth Scroll Behavior */
 html {
     scroll-behavior: smooth;
@@ -262,9 +301,38 @@ html {
     color: #4361ee;
 }
 
+/* Améliorations pour la disposition */
+.tech-stack-section .row {
+    margin-bottom: 0;
+}
+
+.tech-stack-section .row:last-child {
+    margin-bottom: 0;
+}
+
+/* Animation des icônes */
+.tech-card .icon-circle i {
+    transition: transform 0.3s ease;
+}
+
+.tech-card:hover .icon-circle i {
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* Égaliser la hauteur des cartes */
+.tech-card {
+    min-height: 350px;
+}
+
 @media (max-width: 768px) {
     .tech-card {
         margin-bottom: 30px;
+        min-height: auto;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
     }
 }
 

@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>GERALD PORTFOLIO</title>
 
     <!-- Bootstrap core CSS -->
@@ -61,13 +61,13 @@ https://templatemo.com/tm-562-space-dynamic
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="#about">About </a></li>
+              <li class="scroll-to-section"><a href="#top" class="active">Accueil</a></li>
+              <li class="scroll-to-section"><a href="#about">À Propos</a></li>
               <li class="scroll-to-section"><a href="#services">Services</a></li>
               <li class="scroll-to-section"><a href="#portfolio">Portfolio</a></li>
               <li class="scroll-to-section"><a href="#blog">Blog</a></li> 
-              <li class="scroll-to-section"><a href="#contact">Message Us</a></li> 
-              <li class="scroll-to-section"><div class="main-red-button"><a href="#contact">Contact Now</a></div></li> 
+              <li class="scroll-to-section"><a href="#contact">Message</a></li> 
+              <li class="scroll-to-section"><div class="main-red-button"><a href="#contact">Me Contacter</a></div></li> 
             </ul>        
             <a class='menu-trigger'>
                 <span>Menu</span>
@@ -80,41 +80,46 @@ https://templatemo.com/tm-562-space-dynamic
   </header>
   <!-- ***** Header Area End ***** -->
 
+  <!-- ***** Messages d'alerte ***** -->
+  {% if messages %}
+    <div class="messages-container">
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} wow fadeInDown" data-wow-duration="0.8s" data-wow-delay="0.2s">
+          <div class="container">
+            <div class="alert-content">
+              <i class="fas fa-check-circle"></i>
+              <span>{{ message }}</span>
+              <button type="button" class="close-alert" onclick="this.parentElement.parentElement.style.display='none'">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
   <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-6 align-self-center">
-              <div class="left-content header-text wow fadeInLeft card-container" data-wow-duration="1s" data-wow-delay="1s">
-                <div class="text-content">
-                  <h3 class="welcome-text wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <span>Bienvenue 😊</span>
-                  </h3>
-                  <div class="name-title">
-                    <h2>Je me nomme <em>GERALD KIEMDE</em></h2>
-                    <h6 class="profession">Développeur Web</h6>
-                  </div>
-                  <p class="description">
-                    Je suis un développeur <span class="highlight">web 🌐</span> passionné par la création de sites web innovants et intuitifs. Mon expertise s'étend de la conception à la mise en œuvre, en passant par l'optimisation des performances. Je suis constamment à la recherche de nouvelles façons d'améliorer l'expérience utilisateur. Mon approche créative et ma passion pour la résolution de problèmes me permettent de transformer les idées en solutions numériques efficaces. J'adore collaborer avec des clients pour comprendre leurs besoins et leur offrir des solutions sur mesure.
-                  </p>
-                   <!-- <form id="search" action="#" method="GET" class="contact-form">
-                     <fieldset>
-                      <input type="address" name="address" class="email" placeholder="Entrez l'URL de votre site web" autocomplete="on" required>
-                    </fieldset>
-                    <fieldset>
-                      <button type="submit" class="main-button">Analyser le site</button>
-                    </fieldset> 
-                  </form>  -->
-
-                </div>
-              </div>
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+            <h6>Bienvenue dans mon portfolio</h6>
+            <h4>Salut ! Je suis <em>Gerald Kiemde</em></h4>
+            <p class="description">
+              Je suis un développeur <span class="highlight">web et mobile</span> passionné par la création d'applications innovantes et performantes. Mon expertise s'étend du développement frontend au backend, ainsi qu'aux applications mobiles multiplateformes. J'aime transformer les idées en solutions numériques modernes avec une approche centrée sur l'expérience utilisateur.
+            </p>
+            <div class="main-button-red">
+              <div class="scroll-to-section"><a href="#contact">Développeur Web & Mobile</a></div>
             </div>
-            <div class="col-lg-6">
-              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img src="{% static 'assets/images/GERALD.jpg' %}" alt="Gerald Kiemde">
-              </div>
+            <div class="border-first-button scroll-to-section">
+              <a href="#contact">Contactez-moi</a>
             </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+            <img src="{% static 'assets/images/GERALD.JPG' %}" alt="Gerald Kiemde">
           </div>
         </div>
       </div>
@@ -127,9 +132,10 @@ https://templatemo.com/tm-562-space-dynamic
         <h2 class="section-title wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
             Mes Technologies Préférées
         </h2>
-        <div class="row justify-content-center">
+        <!-- Première ligne : 3 technologies -->
+        <div class="row justify-content-center mb-5">
             <!-- Django Card -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 mb-4">
                 <div class="tech-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
                     <div class="tech-icon">
                         <div class="icon-circle django">
@@ -141,9 +147,54 @@ https://templatemo.com/tm-562-space-dynamic
                 </div>
             </div>
 
-            <!-- Canva Card -->
-            <div class="col-lg-4 col-md-6">
+            <!-- React Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
                 <div class="tech-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+                    <div class="tech-icon">
+                        <div class="icon-circle react">
+                            <i class="fab fa-react" style="font-size: 50px; color: #61DAFB;"></i>
+                        </div>
+                    </div>
+                    <h3>React</h3>
+                    <p>Bibliothèque JavaScript moderne que j'utilise pour créer des interfaces utilisateur dynamiques et interactives. React me permet de développer des applications web performantes avec une expérience utilisateur fluide grâce à son système de composants réutilisables.</p>
+                </div>
+            </div>
+
+            <!-- Flutter Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tech-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.8s">
+                    <div class="tech-icon">
+                        <div class="icon-circle flutter">
+                            <div class="flutter-logo" style="display: flex; align-items: center; justify-content: center; height: 70px; width: 70px; margin: 0 auto;">
+                                <svg width="60" height="60" viewBox="0 0 166 202" style="filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));">
+                                    <defs>
+                                        <linearGradient id="flutterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#4285F4"/>
+                                            <stop offset="100%" style="stop-color:#02569B"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <g>
+                                        <polygon fill="#42A5F5" fill-opacity="0.8" points="37.7,128.9 9.8,101.0 100.4,10.4 156.2,10.4"/>
+                                        <polygon fill="#0D47A1" points="46.8,101.0 74.7,128.9 46.8,156.8 19.0,128.9"/>
+                                        <polygon fill="url(#flutterGradient)" points="156.2,94.0 100.4,94.0 79.5,114.9 107.4,142.8 156.2,142.8"/>
+                                        <polygon fill="#42A5F5" points="79.5,114.9 107.4,142.8 74.7,175.5 46.8,147.6"/>
+                                        <polygon fill="#1976D2" points="107.4,142.8 82.5,167.7 156.2,167.7 156.2,142.8"/>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Flutter</h3>
+                    <p>Framework de développement mobile que j'utilise pour créer des applications multiplateformes natives. Avec Flutter, je peux développer une seule application qui fonctionne parfaitement sur iOS et Android tout en offrant des performances natives.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deuxième ligne : 2 technologies centrées -->
+        <div class="row justify-content-center">
+            <!-- Canva Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tech-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.0s">
                     <div class="tech-icon">
                         <div class="icon-circle canva">
                             <img src="{% static 'assets/images/canva.jpg' %}" alt="Canva">
@@ -155,8 +206,8 @@ https://templatemo.com/tm-562-space-dynamic
             </div>
 
             <!-- Docker Card -->
-            <div class="col-lg-4 col-md-6">
-                <div class="tech-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.8s">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tech-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.2s">
                     <div class="tech-icon">
                         <div class="icon-circle docker">
                             <img src="{% static 'assets/images/docker.jpg' %}" alt="Docker">
@@ -173,7 +224,89 @@ https://templatemo.com/tm-562-space-dynamic
 
 
 <style>
+/* ***** Messages d'alerte ***** */
+.messages-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
 
+.alert {
+    background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+    color: white;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.alert-content {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    position: relative;
+}
+
+.alert-content i.fa-check-circle {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: white;
+}
+
+.alert-content span {
+    flex: 1;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.close-alert {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 15px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.close-alert:hover {
+    opacity: 1;
+}
+
+/* Animation d'apparition seulement */
+.alert {
+    animation: slideInDown 0.8s ease;
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
 </style>
 
 
@@ -193,6 +326,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Masquer automatiquement les messages après 5.5 secondes
+setTimeout(function() {
+    const alerts = document.querySelectorAll('.messages-container .alert');
+    alerts.forEach(alert => {
+        alert.style.animation = 'fadeOutUp 0.5s ease forwards';
+        setTimeout(() => {
+            if (alert.parentElement) {
+                alert.parentElement.style.display = 'none';
+            }
+        }, 500); // Attendre que l'animation de sortie se termine
+    });
+}, 5500); // 5.5 secondes d'affichage
 </script>
 
 <div id="services" class="our-services section">
@@ -284,59 +430,44 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           <div class="down-content">
             <h4>E-commerce Premium</h4>
             <span>Solution Complète de Vente en Ligne</span>
-            <div class="tech-stack">
-              <span class="tech">React</span>
-              <span class="tech">Node.js</span>
-              <span class="tech">MongoDB</span>
-            </div>
           </div>
         </div>
       </div>
       <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
         <div class="portfolio-item">
           <div class="thumb">
-            <img src="{% static 'assets/images/4.png' %}" alt="Sécurité Routière">
+            <img src="{% static 'assets/images/4.png' %}" alt="Réservation Ticket ONEA">
             <div class="hover-content">
               <div class="inner-content">
                 <div class="icon">
-                  <i class="fas fa-car-crash"></i>
+                  <i class="fas fa-ticket-alt"></i>
                 </div>
                 <a href="#" class="main-button">Voir le Projet</a>
               </div>
             </div>
           </div>
           <div class="down-content">
-            <h4>Sécurité Routière</h4>
-            <span>Application de Prévention</span>
-            <div class="tech-stack">
-              <span class="tech">Flutter</span>
-              <span class="tech">Firebase</span>
-              <span class="tech">Maps API</span>
-            </div>
+            <h4>Réservation Ticket ONEA</h4>
+            <span>Système de Réservation en Ligne</span>
           </div>
         </div>
       </div>
       <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.7s">
         <div class="portfolio-item">
           <div class="thumb">
-            <img src="{% static 'assets/images/4.png' %}" alt="Gestion RDV">
+            <img src="{% static 'assets/images/4.png' %}" alt="Gestion Familles Victimes">
             <div class="hover-content">
               <div class="inner-content">
                 <div class="icon">
-                  <i class="fas fa-calendar-check"></i>
+                  <i class="fas fa-users-medical"></i>
                 </div>
                 <a href="#" class="main-button">Voir le Projet</a>
               </div>
             </div>
           </div>
           <div class="down-content">
-            <h4>Système de Rendez-vous</h4>
-            <span>Plateforme de Réservation</span>
-            <div class="tech-stack">
-              <span class="tech">Vue.js</span>
-              <span class="tech">Laravel</span>
-              <span class="tech">MySQL</span>
-            </div>
+            <h4>Gestion des Familles des Victimes d'Attaque Terroriste</h4>
+            <span>Plateforme de Soutien et Assistance</span>
           </div>
         </div>
       </div>
@@ -500,9 +631,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     <div class="container">
       <div class="row">
         <div class="col-lg-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
-          <p>© Copyright 2021 Space Dynamic Co. All Rights Reserved. 
+          <p>© Copyright 2025. 
           
-          <br>Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+          <br><a rel="nofollow" href="https://templatemo.com">KIEMDE Gerald</a></p>
         </div>
       </div>
     </div>

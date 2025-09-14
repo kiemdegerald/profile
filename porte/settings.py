@@ -21,12 +21,14 @@ template_dir= os.path.join(BASE_DIR, 'templates')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
+import os
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r#ss7jq%)vcd+^uo^q$&)izzv#r@5+%wom3tq^s^9xp&u^7xjc'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-r#ss7jq%)vcd+^uo^q$&)izzv#r@5+%wom3tq^s^9xp&u^7xjc')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ["raogo.pythonanywhere.com"]
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
 
 # Application definition
@@ -76,11 +78,15 @@ WSGI_APPLICATION = 'porte.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import dj_database_url
+
+# Configuration de base de données pour production et développement
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
 
 
@@ -132,11 +138,25 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# pour les mails
+# Configuration Email Gmail - Sécurisée pour production
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'kiemdegeralde@gmail.com'  # Remplace par ton adresse e-mail
-EMAIL_HOST_PASSWORD = 'lnjh okxl eucf rpsv'  # Remplace par ton mot de passe ou utilise une clé d'application Gmail
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'kiemdegeralde@gmail.com')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'flcz oprd siou ljsx')
+
+# Configuration de sécurité pour la production
+if not DEBUG:
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_REDIRECT_EXEMPT = []
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
+# Mode Test (décommenter si besoin de tester en local)
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
